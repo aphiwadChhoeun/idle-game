@@ -1,18 +1,20 @@
 import './App.css'
-import MainAction from './components/MainAction'
+import MainAction from './components/MainAction/MainAction'
+import Inventory from './components/Inventory/Inventory'
 
 function App() {
 
   const actionClick = () => {
     return () => {
-      console.log('click')
+      // console.log('click')
     }
   }
 
   return (
-    <div className="App">
-      <MainAction clickHandler={actionClick()} />
-    </div>
+    <>
+      <Inventory />
+      <MainAction text='ACTION' clickHandler={actionClick()} />
+    </>
   )
 }
 

@@ -1,0 +1,9 @@
+.currencyWrapper {
+    position: relative;
+}
+
+.bumpNumber {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

@@ -4,11 +4,14 @@ import App from './App'
 import './index.css'
 
 import CurrencyProvider from './providers/CurrencyProvider'
+import SpeedProvider from './providers/SpeedProvider'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <CurrencyProvider>
-      <App />
+      <SpeedProvider>
+        <App />
+      </SpeedProvider>
     </CurrencyProvider>
   </React.StrictMode>
 )
