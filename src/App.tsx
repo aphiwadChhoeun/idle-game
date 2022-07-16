@@ -3,9 +3,15 @@ import MainAction from './components/MainAction'
 
 function App() {
 
+  const actionClick = () => {
+    return () => {
+      console.log('click')
+    }
+  }
+
   return (
     <div className="App">
-      <MainAction />
+      <MainAction clickHandler={actionClick()} />
     </div>
   )
 }
