@@ -1,11 +1,11 @@
 import { motion, useAnimationControls } from "framer-motion"
 import { useContext, useEffect } from "react"
-import { CurrencyContext } from "../../providers/CurrencyProvider"
+import { StatsContext } from "../../providers/StatsProvider"
 
 import styles from './Currency.module.css'
 
 export default function Currency() {
-    const [currency, setCurrency] = useContext(CurrencyContext)
+    const [stats, setStats] = useContext(StatsContext)
     const animation = useAnimationControls()
 
     const variants = {
@@ -18,12 +18,12 @@ export default function Currency() {
 
     useEffect(() => {
         animation.start('jump')
-    }, [currency])
+    }, [stats.currency])
 
     return (
         <div className={styles.currencyWrapper}>
             <div>
-                CURRENCY: {currency}
+                CURRENCY: {stats.currency}
             </div>
             <motion.div
                 className={styles.bumpNumber}

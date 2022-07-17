@@ -1,8 +1,9 @@
 import { motion, useAnimationControls } from "framer-motion"
 import { useContext, useRef, useState } from "react"
-import { CurrencyContext } from "../../providers/CurrencyProvider"
-import { SpeedContenxt } from "../../providers/SpeedProvider"
+import { StatsContext } from "../../providers/StatsProvider"
 import styles from './MainAction.module.css'
+
+import type { StatsProps } from '../../providers/StatsProvider'
 
 type MainActionProps = {
     text: string,
@@ -10,8 +11,7 @@ type MainActionProps = {
 }
 
 export default function MainAction({ text, clickHandler }: MainActionProps) {
-    const [currency, setCurrency] = useContext(CurrencyContext)
-    const [speed, setSpeed] = useContext(SpeedContenxt)
+    const [stats, setStats] = useContext(StatsContext)
     const [isRunning, setIsRunning] = useState(false)
     const meter = useRef(null)
 
@@ -24,14 +24,17 @@ export default function MainAction({ text, clickHandler }: MainActionProps) {
             setIsRunning(true)
             await animation.start({
                 strokeDashoffset: [326, 0],
-                transition: { duration: maxDuration - (speed * maxDuration) },
+                transition: { duration: maxDuration - (stats.speed * maxDuration) },
             })
             animation.set({
                 strokeDashoffset: 326
             })
 
             setIsRunning(false)
-            setCurrency(parseInt(currency) + 1)
+            setStats({
+                ...stats,
+                currency: stats.currency + 1
+            })
             clickHandler()
         }
     }

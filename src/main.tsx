@@ -3,15 +3,12 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 
-import CurrencyProvider from './providers/CurrencyProvider'
-import SpeedProvider from './providers/SpeedProvider'
+import StatsProvider from './providers/StatsProvider'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <CurrencyProvider>
-      <SpeedProvider>
-        <App />
-      </SpeedProvider>
-    </CurrencyProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+    <StatsProvider>
+      <App />
+    </StatsProvider>
+  // </React.StrictMode>
 )
