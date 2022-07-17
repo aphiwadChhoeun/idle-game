@@ -1,0 +1,35 @@
+.meterWrapper {
+    --size: 2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--size) / 1.2);
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.block {
+    --bg: #424242;
+
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid #191919;
+
+    background: var(--bg);
+    filter: drop-shadow(0 0 5px var(--bg));
+}
+
+.block:nth-child(1) {
+    --bg: #541690;
+}
+
+.block:nth-child(2) {
+    --bg: #FF4949;
+}
+
+.block:nth-child(3) {
+    --bg: #FFCD38;
+}

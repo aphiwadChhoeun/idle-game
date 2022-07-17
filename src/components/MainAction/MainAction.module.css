@@ -4,18 +4,3 @@
     flex-direction: column;
     align-items: center;
 }
-
-.meterBg {
-    fill: none;
-    stroke-width: 10px;
-    stroke: #F0EBE3;
-}
-
-.meter {
-    fill: none;
-    stroke-width: 10px;
-    stroke-linecap: round;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-    stroke: #76BA99;
-}

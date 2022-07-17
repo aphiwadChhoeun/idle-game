@@ -4,16 +4,10 @@ import Inventory from './components/Inventory/Inventory'
 
 function App() {
 
-  const actionClick = () => {
-    return () => {
-      // console.log('click')
-    }
-  }
-
   return (
     <>
       <Inventory />
-      <MainAction text='ACTION' clickHandler={actionClick()} />
+      <MainAction />
     </>
   )
 }

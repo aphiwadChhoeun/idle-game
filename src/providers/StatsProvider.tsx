@@ -3,12 +3,14 @@ import useLocalStorage from "use-local-storage";
 
 export type StatsProps = {
     currency: number,
-    speed: number
+    earnSpeed: number,
+    progress: number
 }
 
 const defaultStats = {
     currency: 0,
-    speed: 0.1
+    earnSpeed: 1,
+    progress: 0
 }
 
 export const StatsContext = createContext<[StatsProps, React.Dispatch<StatsProps>]>([defaultStats, () => { }])
