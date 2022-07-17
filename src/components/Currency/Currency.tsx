@@ -29,7 +29,7 @@ export default function Currency() {
                 className={styles.bumpNumber}
                 animate={animation}
                 variants={variants}>
-                +1
+                +{stats.earnSpeed}
             </motion.div>
         </div>
     )
