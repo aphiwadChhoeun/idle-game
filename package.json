@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "framer-motion": "^6.5.1",
+    "numeral": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "use-local-storage": "^2.3.6"
