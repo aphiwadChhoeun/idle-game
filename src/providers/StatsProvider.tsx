@@ -11,6 +11,11 @@ export type StatsProps = {
     workers: Array<Worker>
 }
 
+export const defaultWorker: Worker = {
+    earnSpeed: 1,
+    earnSpeedUpgrade: 0
+}
+
 export const defaultStats = {
     currency: 0,
     workers: [{

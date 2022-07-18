@@ -12,19 +12,19 @@ export function useAction(workerIndex: number): Worker {
         return stats.workers[workerIndex]
     }, [stats.workers[workerIndex]])
 
-    let updateTick = 0
-    useAnimationFrame(() => {
-        if (updateTick > TIME_PER_FRAME * UPDATE_STEP) {
-            updateTick = 0
+    // let updateTick = 0
+    // useAnimationFrame(() => {
+    //     if (updateTick > TIME_PER_FRAME * UPDATE_STEP) {
+    //         updateTick = 0
 
-            setStats({
-                ...stats,
-                currency: stats.currency + (worker.earnSpeed * TIME_PER_FRAME * UPDATE_STEP)
-            })
-        }
+    //         setStats({
+    //             ...stats,
+    //             currency: stats.currency + (worker.earnSpeed * TIME_PER_FRAME * UPDATE_STEP)
+    //         })
+    //     }
 
-        updateTick += TIME_PER_FRAME
-    })
+    //     updateTick += TIME_PER_FRAME
+    // })
 
     return worker
 }

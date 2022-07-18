@@ -4,6 +4,7 @@ import { StatsContext } from "../../../providers/StatsProvider";
 export type UpgradeHookProps = [
     canBuy: boolean,
     upgradeCost: number,
+    upgradeStat: number,
     buyUpgrade: () => void
 ]
 
@@ -15,16 +16,16 @@ export function useUpgrade(workerIndex: number): UpgradeHookProps {
 
     const baseUpgradeCost = 10
     const upgradeCost = useMemo(() => {
-        if (worker.earnSpeedUpgrade === 0) {
-            return baseUpgradeCost
-        }
-
-        return baseUpgradeCost + ((worker.earnSpeedUpgrade + 1) * worker.earnSpeedUpgrade)
+        return baseUpgradeCost + Math.floor(Math.exp(worker.earnSpeedUpgrade))
     }, [worker.earnSpeedUpgrade])
 
     const canBuy = useMemo(() => {
         return upgradeCost <= stats.currency
     }, [stats.currency])
+
+    const upgradeStat = useMemo(() => {
+        return Math.pow(2, worker.earnSpeedUpgrade)
+    }, [worker.earnSpeedUpgrade])
 
     const buyUpgrade = () => {
         if (stats.currency < upgradeCost) return
@@ -32,7 +33,7 @@ export function useUpgrade(workerIndex: number): UpgradeHookProps {
         const newStats = { ...stats }
         newStats.currency = stats.currency - upgradeCost
         newStats.workers[workerIndex] = {
-            earnSpeed: worker.earnSpeed + 1,
+            earnSpeed: worker.earnSpeed + upgradeStat,
             earnSpeedUpgrade: worker.earnSpeedUpgrade + 1
         }
         newStats.workers = [...newStats.workers]
@@ -43,5 +44,5 @@ export function useUpgrade(workerIndex: number): UpgradeHookProps {
         })
     }
 
-    return [canBuy, upgradeCost, buyUpgrade]
+    return [canBuy, upgradeCost, upgradeStat, buyUpgrade]
 }

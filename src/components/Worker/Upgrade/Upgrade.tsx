@@ -3,7 +3,7 @@ import { formatNumber } from "../../../libs/helpers"
 import type { WorkerProps } from '../Worker'
 
 export default function Upgrade({ workerIndex }: WorkerProps) {
-    const [canBuy, upgradeCost, buyUpgrade] = useUpgrade(workerIndex)
+    const [canBuy, upgradeCost, upgradeStat, buyUpgrade] = useUpgrade(workerIndex)
 
     const clickHandler = () => {
         return () => {
@@ -17,6 +17,8 @@ export default function Upgrade({ workerIndex }: WorkerProps) {
                 <div>UPGRADE</div>
                 <div className="sub-text">{formatNumber(upgradeCost)}</div>
             </button>
+
+            <div>+{formatNumber(upgradeStat)}</div>
         </div>
     )
 }
