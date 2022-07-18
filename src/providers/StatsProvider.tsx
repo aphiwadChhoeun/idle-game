@@ -8,7 +8,8 @@ export type Worker = {
 
 export type StatsProps = {
     currency: number,
-    workers: Array<Worker>
+    workers: Array<Worker>,
+    capacity: number
 }
 
 export const defaultWorker: Worker = {
@@ -21,7 +22,8 @@ export const defaultStats = {
     workers: [{
         earnSpeed: 1,
         earnSpeedUpgrade: 0
-    }]
+    }],
+    capacity: 1
 }
 
 export const StatsContext = createContext<[StatsProps, React.Dispatch<StatsProps>]>([defaultStats, () => { }])

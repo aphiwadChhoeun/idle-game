@@ -1,3 +1,4 @@
+import Capacity from '../Capacity/Capacity'
 import Currency from '../Currency/Currency'
 import EarnRate from '../EarnSpeed/EarnRate'
 import styles from './Inventory.module.css'
@@ -8,6 +9,7 @@ export default function Inventory() {
             <div className={styles.statsWrapper}>
                 <Currency />
                 <EarnRate />
+                <Capacity />
             </div>
         </div>
     )

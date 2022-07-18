@@ -16,8 +16,9 @@ export function useHire(): HireType {
         return BASE_COST * Math.floor(Math.exp(stats.workers.length))
     }, [stats.workers])
     const canHire = useMemo(() => {
+        if (stats.workers.length >= stats.capacity) return false
         return stats.currency >= hireCost
-    }, [stats.currency])
+    }, [stats.currency, stats.workers, stats.capacity])
 
     const hire = () => {
         if (stats.currency < hireCost) return
