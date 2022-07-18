@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { StatsContext } from "../../providers/StatsProvider";
+import { StatsContext } from "../../../providers/StatsProvider";
 
 export type UpgradeHookProps = [
     canBuy: boolean,

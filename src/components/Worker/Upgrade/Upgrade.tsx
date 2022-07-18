@@ -1,11 +1,8 @@
 import { useUpgrade } from "./useUpgrade"
-import { formatNumber } from "../../libs/helpers"
+import { formatNumber } from "../../../libs/helpers"
+import type { WorkerProps } from '../Worker'
 
-export type UpgradeProps = {
-    workerIndex: number
-}
-
-export default function Upgrade({ workerIndex }: UpgradeProps) {
+export default function Upgrade({ workerIndex }: WorkerProps) {
     const [canBuy, upgradeCost, buyUpgrade] = useUpgrade(workerIndex)
 
     const clickHandler = () => {

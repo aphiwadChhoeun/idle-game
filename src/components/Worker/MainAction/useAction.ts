@@ -1,7 +1,7 @@
 import { useAnimationFrame } from "framer-motion";
 import { useContext, useMemo } from "react";
-import { StatsContext } from "../../providers/StatsProvider";
-import type { Worker } from "../../providers/StatsProvider";
+import { StatsContext } from "../../../providers/StatsProvider";
+import type { Worker } from "../../../providers/StatsProvider";
 
 const TIME_PER_FRAME = 1 / 60
 const UPDATE_STEP = 10

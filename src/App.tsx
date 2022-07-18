@@ -1,16 +1,19 @@
+import { useContext } from 'react'
 import './App.css'
-import MainAction from './components/MainAction/MainAction'
 import Inventory from './components/Inventory/Inventory'
-import Upgrade from './components/Upgrade/Upgrade'
 import Reset from './components/Reset/Reset'
+import Worker from './components/Worker/Worker'
+import { StatsContext } from './providers/StatsProvider'
 
 function App() {
+  const [stats, setStats] = useContext(StatsContext)
 
   return (
     <>
       <Inventory />
-      <MainAction workerIndex={0} />
-      <Upgrade workerIndex={0} />
+      <div className="workers-wrapper">
+        {stats.workers.map((worker, index) => (<Worker key={index} workerIndex={index} />))}
+      </div>
       <Reset />
     </>
   )

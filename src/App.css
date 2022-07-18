@@ -3,10 +3,15 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .section {
   margin: 1em;
+}
+
+.workers-wrapper {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  padding: 1em;
 }
