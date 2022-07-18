@@ -1,5 +1,5 @@
 import Currency from '../Currency/Currency'
-import EarnSpeed from '../EarnSpeed/EarnSpeed'
+import EarnRate from '../EarnSpeed/EarnRate'
 import styles from './Inventory.module.css'
 
 export default function Inventory() {
@@ -7,7 +7,7 @@ export default function Inventory() {
         <div className={styles.inventoryWrapper}>
             <div className={styles.statsWrapper}>
                 <Currency />
-                <EarnSpeed />
+                <EarnRate />
             </div>
         </div>
     )

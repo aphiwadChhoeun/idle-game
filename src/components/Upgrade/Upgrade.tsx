@@ -1,22 +1,25 @@
-import { useContext } from "react"
-import { StatsContext } from "../../providers/StatsProvider"
+import { useUpgrade } from "./useUpgrade"
+import { formatNumber } from "../../libs/helpers"
 
-export default function Upgrade() {
-    const [stats, setStats] = useContext(StatsContext)
+export type UpgradeProps = {
+    workerIndex: number
+}
 
-    const clickHandler = (step: number) => {
+export default function Upgrade({ workerIndex }: UpgradeProps) {
+    const [canBuy, upgradeCost, buyUpgrade] = useUpgrade(workerIndex)
+
+    const clickHandler = () => {
         return () => {
-            setStats({
-                ...stats,
-                earnSpeed: stats.earnSpeed + step
-            })
+            buyUpgrade()
         }
     }
 
     return (
-        <div>
-            <button onClick={clickHandler(1)}>Upgrade</button>
-            <button onClick={clickHandler(-1)}>Downgrade</button>
+        <div className="section">
+            <button disabled={!canBuy} onClick={clickHandler()}>
+                <div>UPGRADE</div>
+                <div className="sub-text">{formatNumber(upgradeCost)}</div>
+            </button>
         </div>
     )
 }

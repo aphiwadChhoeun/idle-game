@@ -1,16 +1,22 @@
 import { createContext, PropsWithChildren } from "react";
 import useLocalStorage from "use-local-storage";
 
-export type StatsProps = {
-    currency: number,
+export type Worker = {
     earnSpeed: number,
-    progress: number
+    earnSpeedUpgrade: number
 }
 
-const defaultStats = {
+export type StatsProps = {
+    currency: number,
+    workers: Array<Worker>
+}
+
+export const defaultStats = {
     currency: 0,
-    earnSpeed: 1,
-    progress: 0
+    workers: [{
+        earnSpeed: 1,
+        earnSpeedUpgrade: 0
+    }]
 }
 
 export const StatsContext = createContext<[StatsProps, React.Dispatch<StatsProps>]>([defaultStats, () => { }])
