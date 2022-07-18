@@ -1,10 +1,12 @@
 .workerWrapper {
+    --bgColor: #fff;
     --borderColor: #DDD;
 
     width: 148px;
     height: 195px;
     box-sizing: border-box;
     border: 1px solid var(--borderColor);
+    background: var(--bgColor);
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -10,8 +10,13 @@
 }
 
 .workers-wrapper {
+  --bgColor: #E7F6F2;
+
+  background: var(--bgColor);
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
   padding: 1em;
+  height: 50%;
+  overflow-y: scroll;
 }
