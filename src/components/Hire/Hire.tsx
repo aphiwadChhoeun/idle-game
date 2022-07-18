@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { formatNumber } from '../../libs/helpers'
+import { clickSound } from '../../libs/sounds'
 import { useCapacity } from '../Capacity/useCapacity'
 import styles from './Hire.module.css'
 import { useHire } from './useHire'
@@ -13,6 +14,7 @@ export default function Hire() {
 
     const clickHandler = () => {
         return () => {
+            clickSound()
             hire()
         }
     }

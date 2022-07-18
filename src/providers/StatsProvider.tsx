@@ -23,7 +23,7 @@ export const defaultStats = {
         earnSpeed: 1,
         earnSpeedUpgrade: 0
     }],
-    capacity: 1
+    capacity: 2
 }
 
 export const StatsContext = createContext<[StatsProps, React.Dispatch<StatsProps>]>([defaultStats, () => { }])

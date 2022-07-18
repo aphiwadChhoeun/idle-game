@@ -1,9 +1,11 @@
 .hireWrapper {
+    --bgColor: #fff;
     --borderColor: #DDD;
 
     width: 148px;
-    height: 195px;
+    height: 120px;
     box-sizing: border-box;
+    background: var(--bgColor);
     border: 1px solid var(--borderColor);
     display: flex;
     flex-direction: column;

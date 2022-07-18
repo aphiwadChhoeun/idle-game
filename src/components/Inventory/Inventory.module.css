@@ -1,7 +1,9 @@
 .inventoryWrapper {
+    --bgColor: #fff;
+
     width: 100%;
     height: 12em;
-    background: #DDD;
+    background: var(--bgColor);
     box-sizing: border-box;
     display: flex;
     align-items: center;

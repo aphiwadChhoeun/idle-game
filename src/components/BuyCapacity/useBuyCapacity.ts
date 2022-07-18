@@ -1,7 +1,7 @@
 import { useContext, useMemo } from "react";
 import { StatsContext } from "../../providers/StatsProvider";
 
-const BASE_COST = 1_000_000
+const BASE_COST = 10_000
 
 export type BuyCapacityType = [
     canBuy: boolean,

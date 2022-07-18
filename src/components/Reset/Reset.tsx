@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import { clickSound } from "../../libs/sounds"
 import { StatsContext, defaultStats } from "../../providers/StatsProvider"
 
 
@@ -7,6 +8,7 @@ export default function Reset() {
 
     const clickHandler = () => {
         return () => {
+            clickSound()
             setStats(defaultStats)
         }
     }
