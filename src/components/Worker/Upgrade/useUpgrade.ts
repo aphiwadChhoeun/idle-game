@@ -16,8 +16,8 @@ export function useUpgrade(workerIndex: number): UpgradeHookProps {
 
     const baseUpgradeCost = 10
     const upgradeCost = useMemo(() => {
-        return baseUpgradeCost + Math.floor(Math.exp(worker.earnSpeedUpgrade))
-    }, [worker.earnSpeedUpgrade])
+        return baseUpgradeCost + Math.floor(Math.exp(worker.earnSpeedUpgrade)) + (Math.floor(Math.exp(stats.workers.length)))
+    }, [stats.workers])
 
     const canBuy = useMemo(() => {
         return upgradeCost <= stats.currency
@@ -32,6 +32,7 @@ export function useUpgrade(workerIndex: number): UpgradeHookProps {
 
         const newStats = { ...stats }
         newStats.currency = stats.currency - upgradeCost
+
         newStats.workers[workerIndex] = {
             earnSpeed: worker.earnSpeed + upgradeStat,
             earnSpeedUpgrade: worker.earnSpeedUpgrade + 1

@@ -9,14 +9,14 @@
 }
 
 .block {
-    --bg: #424242;
+    --bg: #CA4E79;
 
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
     box-sizing: border-box;
-    border: 1px solid #191919;
+    border: 1px solid #FFF9CA;
 
     background: var(--bg);
-    filter: drop-shadow(0 0 5px var(--bg));
+    filter: drop-shadow(0 0 2px var(--bg));
 }
