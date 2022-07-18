@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import './App.css'
+import BuyCapacity from './components/BuyCapacity/BuyCapacity'
 import Hire from './components/Hire/Hire'
 import Inventory from './components/Inventory/Inventory'
 import Reset from './components/Reset/Reset'
@@ -16,7 +17,10 @@ function App() {
         {stats.workers.map((worker, index) => (<Worker key={index} workerIndex={index} />))}
         <Hire />
       </div>
-      <Reset />
+      <div className='shops-wrapper'>
+        <BuyCapacity />
+        <Reset />
+      </div>
     </>
   )
 }

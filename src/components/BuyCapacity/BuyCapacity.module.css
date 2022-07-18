@@ -1,0 +1,11 @@
+.wrapper {
+    --bgColor: #fff;
+    --borderColor: #DDD;
+
+    padding: 1em;
+    width: 200px;
+    border: 1px solid var(--borderColor);
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+}

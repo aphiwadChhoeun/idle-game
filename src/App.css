@@ -17,6 +17,12 @@
   gap: 1em;
   flex-wrap: wrap;
   padding: 1em;
-  height: 50%;
+  height: calc((195px * 2) + 1em);
   overflow-y: scroll;
+}
+
+.shops-wrapper {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
 }
