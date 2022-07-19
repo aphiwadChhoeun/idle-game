@@ -24,7 +24,7 @@ export function useUpgrade(workerIndex: number): UpgradeHookProps {
     }, [stats.currency])
 
     const upgradeStat = useMemo(() => {
-        return Math.floor(Math.pow(2, worker.earnSpeedUpgrade) / 4)
+        return Math.max(Math.floor(Math.pow(2, worker.earnSpeedUpgrade) / 4), 1)
     }, [worker.earnSpeedUpgrade])
 
     const buyUpgrade = () => {
